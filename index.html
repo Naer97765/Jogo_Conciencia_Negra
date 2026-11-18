@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Quiz da Consciência Negra</title>
+        <link rel="stylesheet" href="quadrinhos.css">
+    </head>
+    <body>
+        <header>
+            <div class="brand">
+                <i></i>Memória Negra</div>
+            <button id="profile" class="profile" hidden>Trocar participante</button>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="intro">
+                    <div class="date">20 de novembro</div>
+                    <h1>
+                        <small>Quiz da</small> Consciência<br>Negra</h1>
+                    <p>Cinco perguntas sobre história, resistência e liberdade.</p>
+                </div>
+                <div class="scene" aria-hidden="true">
+                    <span class="spark one">✦</span>
+                    <span class="spark two">✦</span>
+                    <div class="mascot">
+                        <i class="arm left"></i>
+                        <i class="arm right"></i>
+                        <i class="leg left"></i>
+                        <i class="leg right"></i>
+                        <div class="fridge">
+                            <i class="freezer"></i>
+                            <i class="handle upper"></i>
+                            <i class="handle lower"></i>
+                            <i class="magnet">★</i>
+                            <span class="brow"></span>
+                            <span class="eyes"></span>
+                            <span class="smile"></span>
+                        </div>
+                    </div>
+                    <span class="bubble" id="speech">Bora jogar?</span>
+                </div>
+            </section>
+            <div class="layout">
+                <section class="card" id="quiz">
+                    <div id="entrada">
+                        <div class="eyebrow">Entrada no quiz</div>
+                        <h2>Qual é o seu nome?</h2>
+                        <form id="identity">
+                            <label for="nick">Nome do participante</label>
+                            <input id="nick" required maxlength="30" autocomplete="off" placeholder="Digite seu nome">
+                            <p class="muted">Você tem 10 segundos por pergunta. Quando o tempo acaba, o quiz avança e a pergunta vale zero ponto.</p>
+                            <button class="action">Iniciar quiz →</button>
+                        </form>
+                    </div>
+                    <section id="pergunta" hidden>
+                        <p id="aviso" class="expired-note" role="status" hidden></p>
+                        <div class="top">
+                            <span class="eyebrow" id="numero"></span>
+                            <span class="clock" id="clock" role="timer" aria-label="Tempo restante">
+                                <span id="seconds"></span>
+                            </span>
+                        </div>
+                        <div class="track">
+                            <b id="progresso"></b>
+                        </div>
+                        <h2 id="enunciado"></h2>
+                        <div id="alternativas"></div>
+                        <div id="feedback" aria-live="polite" hidden>
+                            <p>
+                                <strong id="correcao"></strong>
+                                <span id="explicacao"></span>
+                            </p>
+                            <button class="action" id="avancar"></button>
+                        </div>
+                    </section>
+                    <section id="resultado" hidden>
+                        <div class="eyebrow">Rodada concluída</div>
+                        <h2>Seu resultado</h2>
+                        <p id="resumo"></p>
+                        <p id="expiradas"></p>
+                        <button class="action" id="reiniciar">Jogar novamente</button>
+                    </section>
+                </section>
+                <aside>
+                    <section class="scoreboard">
+                        <div class="eyebrow">Sua pontuação</div>
+                        <div class="score">
+                            <span id="score">0</span>
+                            <small> / 50</small>
+                        </div>
+                        <div class="stars" aria-hidden="true">
+                            <i>★</i>
+                            <i>★</i>
+                            <i>★</i>
+                            <i>★</i>
+                            <i>★</i>
+                        </div>
+                        <small>Cada estrela vale 10 pontos.</small>
+                    </section>
+                    <section class="league">
+                        <h2>Ranking da turma</h2>
+                        <p class="muted">Melhor resultado de cada participante neste navegador.</p>
+                        <div id="standings">
+                            <p id="ranking-vazio">A primeira rodada concluída abre o ranking.</p>
+                            <table class="ranking" hidden>
+                                <thead>
+                                    <tr>
+                                        <th>Pos.</th>
+                                        <th>Nome</th>
+                                        <th>Pontos</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="classificacao"></tbody>
+                            </table>
+                        </div>
+                        <div id="record" class="muted"></div>
+                    </section>
+                </aside>
+            </div>
+        </main>
+        <script src="quiz.js"></script>
+    </body>
+</html>
